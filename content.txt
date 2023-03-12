@@ -1,0 +1,55 @@
+Phishing is without a doubt the number one threat affecting mobile devices today. 
+Our data confirms that a new phishing site is created once every 15-20 seconds. 
+That means over 4,000 new attacks go live every day.
+
+If the hacker is willing to foot the bill, a .com, .org or .co 
+TLD will likely drive more successful attacks thanks to their prime reputation and familiarity
+
+.com
+.org
+.in - India
+.ml - Mali, a landlocked country in West Africa
+.cf - Central African Republic and is administered by the Central African Society of Telecommunications
+tk - Tokelau, territory north of New Zealand in the South Pacific 
+.cn
+.xyz 
+.buzz 
+.shop
+.net 
+.ga 
+
+Famous Brands:
+
+    Facebook 
+    Amazon
+    Microsoft
+    WhatsApp
+    Apple 
+    Crypto/Wallet 
+    Instagram 
+    Outlook 
+    DHL 
+    Chase
+    PayPal 
+    Adobe
+    PenSam 
+    Wells Fargo
+    Netflix
+    AT&T
+    Tencent 
+    Citi
+    IRS
+    Webmail
+
+
+Existing Ideas:
+    Using security software to protect your computer. 
+    Enabling auto-updates for software to protect your smartphone. 
+    Utilizing multi-factor authentication to secure your accounts. 
+    Making a backup of your data to protect it. 
+    Informing employees about phishing. 
+    SOCRadar Digital Risk Protection(DRP)
+    Reverse Email address Lookup
+
+Stay a step ahead of the scammers. Educate yourself on some of the most common frauds and scams.
+
