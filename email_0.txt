@@ -1,8 +1,67 @@
-From: • J U S T I N • <rampraveen619@gmail.com>
-To: "testingguys619@gmail.com" <testingguys619@gmail.com>
-Date: Sun, 12 Mar 2023 06:43:26
+Message ID: <CAG495652qg=Zqmc-ot+AFzdanNe9Z7vrwmcqocPwwMF7vf9svg@mail.gmail.com>
+
+Sender Name: • J U S T I N •
+
+Sender Email: <re.Match object; span=(41, 66), match='<rampraveen619@gmail.com>'>
+
+Receiver Email: <re.Match object; span=(27, 53), match='<testingguys619@gmail.com>'>
+
+Date and Time: Sun, 12 Mar 2023 12:13:26 +0530
+
 Subject: First commit
 
-Body: 
+Body Content: 
+
+--00000000000075d68f05f6ae500a
+Content-Type: text/plain; charset="UTF-8"
 
 Hello bro
+
+--00000000000075d68f05f6ae500a
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="auto">Hello bro</div>
+
+--00000000000075d68f05f6ae500a--
+HTML Content: 
+
+<div dir="auto">Hello bro</div>SPF Information: 
+
+pass (google.com: domain of rampraveen619@gmail.com designates
+ 209.85.220.41 as permitted sender) client-ip=209.85.220.41;Authentication Results: mx.google.com; dkim=pass header.i=@gmail.com
+ header.s=20210112 header.b=SUuPc9CP; spf=pass (google.com: domain of
+ rampraveen619@gmail.com designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=rampraveen619@gmail.com; dmarc=pass (p=NONE sp=QUARANTINE
+ dis=NONE) header.from=gmail.com
+
+DKIM Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20210112;
+ t=1678603418;
+ h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+ :date:message-id:reply-to; bh=U2DDF8UN/XHRkAcuMk1v7CVqWV5twsoxBg7pAxXC4nc=;
+ b=SUuPc9CPbSL7TjUDAga2b446v43uRcegXSXB5XjA8idoLg8maKpMbyMnG/L4rXJlxh
+ 3W1Kuxn+XVFRxWPYJa5PX56HtPkRkTnSZfs/T8RDj64fjT/E3crrPiQQMclVYF9/FAFp
+ SdTozG/ids1qC7bsz3yVJM6az+AmV+Lw1nwHOPlB7iPAizznr7nYHJWCNjMRz3HXkIOx
+ olku/GMSkjQj5NrOF7SLYF52vBOBVYluixo1zWVCSLJYTnXoY6W9mnItk1cMzVk8qPhs
+ 79WySrqEpVGYX1Hj9+xjgHWqSV90dV56cKiDRvZ4FE7qQAaIK/NuVx7PRPwsS6OdK9/3 BaDw==
+
+X-Google-DKIM: None
+
+Message State: AO0yUKVoidzJi+ze7bIevKp6hw8A6CHYIS2vLc7kqhSFwxrv3bKvmMs6
+ j/pg0hWh0H+tGrNEopdDpiFeb38L+kp+pJtJmHYCwvhR
+
+ARC-Authentication-Results: i=1; mx.google.com; dkim=pass header.i=@gmail.com
+ header.s=20210112 header.b=SUuPc9CP; spf=pass (google.com: domain of
+ rampraveen619@gmail.com designates 209.85.220.41 as permitted sender)
+ smtp.mailfrom=rampraveen619@gmail.com; dmarc=pass (p=NONE sp=QUARANTINE
+ dis=NONE) header.from=gmail.com
+
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com;
+ s=arc-20160816;
+ h=to:subject:message-id:date:from:mime-version:dkim-signature;
+ bh=U2DDF8UN/XHRkAcuMk1v7CVqWV5twsoxBg7pAxXC4nc=;
+ b=YtRH5b7fZ354fRoVxI5rJsvncutLvWLeEP3L97TlfTzCrf/AQglCcDH2wLgPH2Xtfs
+ nkbxJ+PiGYGhxdj6RQY2wOdFbhAnCtaIP4GSEOUY7eNp8fGjThUUNTaHWnSug+YTc93v
+ mJU6bNkKCuGyrvSnWqH3JRCAFqjfrc0L7OLXJihYGX+o95buHGCptAFp3XovNkMg6Wlk
+ vGH/SFadcYpz8XRbs9gZueXf/icdPy3au+gcVL8PXkNelWKLHBJL23NF3W+ZZw+p1a/I
+ vWzVosgdKd7ubL0KQwMJhOfKHv8Xf9TZyKgyKalmtxlTsP9e3SPDQulXcL6Cf8Zzz7bY cyjw==
+
