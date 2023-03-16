@@ -26,6 +26,16 @@ from email.header import decode_header
 import datetime as dt
 import time
 
+def banner():
+    print()
+    print('''                       dBBBBb  dBBBP  dBBBBP dBBBP  dBBBBb  dBBBBb  dBBBP dBBBBBb
+                          dB'                          dBP     dB'            dBP
+                     dBP dB' dBBP   dBBBP  dBBP   dBP dBP dBP dB' dBBP    dBBBBK'
+                    dBP dB' dBP    dBP    dBP    dBP dBP dBP dB' dBP     dBP  BB 
+                   dBBBBB' dBBBBP dBP    dBBBBP dBP dBP dBBBBB' dBBBBP  dBP  dB' 
+                                                                                 ''')
+    print()
+banner()
 acc = "testingguys619@gmail.com"
 passwd = "jrkyjxtcjwxewtvq"
 
@@ -37,21 +47,40 @@ print(" [*] Connecting to GmailBox via IMAP...... : {0}".format(dt.datetime.toda
 print()
 
 #print(imap.list())
-imap.select("INBOX")
+imap.select("INBOX")    #[Gmail]/All Mail  --> to see all mails in mailbox
 
 status, messages = imap.search(None, 'UNSEEN')      #ALL/UNSEEN
+messages = messages[0].split(b' ')   #list of email ids
+print(messages,"\n")
+
+
 
 num_msgs = len(messages[0].split())
 print("Total number of unread mails in mailbox: ",num_msgs)
 
 
 for msg_id in messages[0].split():
-        status, header = imap.fetch(msg_id, "(BODY.PEEK[HEADER])")
+        status, message_data = imap.fetch(msg_id, "(BODY.PEEK[HEADER])")   #BODY[HEADER] -> mail status to seen
+                                                                     #BODY.PEEK[HEADER]) -> fetch out the mail details and return status as unseen
         
-        msg = email.message_from_bytes(header[0][1])
+        header = message_data[0][1].decode('utf-8')           #both produces same data
+        msg = email.message_from_bytes(message_data[0][1])
+
+        #print(header)
+        print("+"*40,"\n")
+        print(msg)
         
+
+
+        From, encoding = decode_header(msg["From"])[0]
+        if isinstance(From, bytes):         # if it's a bytes type, decode to str
+            From = From.decode(encoding)
+        To=msg["To"]
+        Subject=msg["Subject"]
+        Date=msg["Date"]
+
         print("Mailbox: INBOX")
-        print("From:", msg["From"])
+        print("From:", From)
         print("To:", msg["To"])
         print("Subject:", msg["Subject"])
         print("Date:", msg["Date"])
@@ -59,37 +88,9 @@ for msg_id in messages[0].split():
         print()
 
 
-###################################################################################
-while True:
-    status, messages = imap.search(None, 'UNSEEN')
-    messages = messages[0].split(b' ')   #list of email ids
 
-    for mail in messages:
-        res, msg = imap.fetch(mail, "(RFC822)")
+        #time.sleep(10)
 
-        for response in msg:
-            if isinstance(response, tuple):
-                # parse a bytes email into a message object
-                msg = email.message_from_bytes(response[1])
-
-                # decode the email subject
-                subject = decode_header(msg["Subject"])[0][0]
-                if isinstance(subject, bytes):
-                    # if it's a bytes type, decode to str
-                    subject = subject.decode()
-
-                # decode email sender
-                From, encoding = decode_header(msg["From"])[0]
-                if isinstance(From, bytes):
-                    # if it's a bytes type, decode to str
-                    From = From.decode(encoding)
-
-                print("Subject:", subject)
-                print("From:", From)
-                print("-"*10)
-    
-    time.sleep(10)
-##################################################################################
 
     
 imap.close()

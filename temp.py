@@ -1,24 +1,3 @@
-# Get the header of the first unread email
-status, message_data = mail.fetch(message_numbers[0], '(BODY[HEADER])')
-
-# Extract the header from the message data
-header = message_data[0][1].decode('utf-8')
-
-
-
-import imaplib
-import email
-
-# account credentials
-username = "your_email@gmail.com"
-password = "your_password"
-
-# create an IMAP4 class with SSL 
-imap = imaplib.IMAP4_SSL("imap.gmail.com")
-
-# authenticate
-imap.login(username, password)
-
 # get list of mailbox folders
 status, mailbox_list = imap.list()
 
@@ -27,31 +6,6 @@ for mailbox in mailbox_list:
     # select the mailbox folder
     mailbox_name = mailbox.decode().split()[-1]
     imap.select(mailbox_name)
-    
-    # search for unseen messages
-    status, messages = imap.search(None, "UNSEEN")
-    
-    # iterate over unseen messages
-    for msg_id in messages[0].split():
-        # fetch the header of the message
-        status, header = imap.fetch(msg_id, "(BODY.PEEK[HEADER])")
-        
-        # convert header bytes to message object
-        msg = email.message_from_bytes(header[0][1])
-        
-        # print message headers
-        print(f"Mailbox: {mailbox_name}")
-        print("From:", msg["From"])
-        print("To:", msg["To"])
-        print("Subject:", msg["Subject"])
-        print("Date:", msg["Date"])
-        print("="*40)
-        
-# close the mailbox and logout
-imap.close()
-imap.logout()
-
-
 ##########################################################################################
 
 import datetime
