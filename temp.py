@@ -1,3 +1,10 @@
+# retrieve email message ID
+if data[0]:
+    email_id = data[0].split()[0]
+    typ, data = imap_server.fetch(email_id, '(BODY[HEADER.FIELDS (MESSAGE-ID)])')
+    message_id = data[0][1].decode().strip()
+    print('Message ID:', message_id)
+
 # get list of mailbox folders
 status, mailbox_list = imap.list()
 
