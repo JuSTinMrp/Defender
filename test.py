@@ -58,7 +58,7 @@ def banner():
     print()
 banner()
 acc = "testingguys619@gmail.com"
-passwd = "jrkyjxtcjwxewtvq"
+passwd = "pfcajxuuwdnfqopp"
 
 imap = imaplib.IMAP4_SSL("imap.gmail.com",993)      #imap4 cls with ssl
 
@@ -89,7 +89,7 @@ for msg_id in messages[0].split():
 
         #print(header)
         print("+"*40,"\n")
-        print(msg)
+        #print(msg)
         
 
 
@@ -110,7 +110,7 @@ for msg_id in messages[0].split():
 
 
 
-        #time.sleep(10)
+        #time.sleep(20)
 
 
   

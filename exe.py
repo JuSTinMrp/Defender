@@ -5,7 +5,7 @@ import re
 import itertools
 
 username = "testingguys619@gmail.com"
-password = "jrkyjxtcjwxewtvq"
+password = "pfcajxuuwdnfqopp"
 
 imap_server = "imap.gmail.com"
 imap_port = 993
